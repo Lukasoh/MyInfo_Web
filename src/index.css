@@ -1,0 +1,28 @@
+.headerBg{
+    background-color: black;
+    height: 100px;
+    width: 100vw;
+    align-items: center;
+    justify-content: right;
+    display:flex;
+    position: relative;
+    color: White;
+}
+
+.titleTxt{
+    color: White;
+    font-weight:bold;
+    font-size: 25px;
+    margin-right:15%;
+}
+
+.my-img{
+    position:absolute;
+    top:25px;
+    left:15%;
+    border: solid black 3px;
+    transform: translateX(-50%);
+    width: 150px;
+    height:150px;
+    border-radius: 50%;
+}
