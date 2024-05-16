@@ -1,0 +1,149 @@
+.headerBg
+{
+    background:black;
+    height:600px;
+    width:100%; 
+    position:relative;
+}
+
+.p_div1
+{
+    position:relative;
+    background:pink;
+    width:100%;
+    height:3000px;
+}
+
+
+.p_title
+{
+    position:absolute;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight:bold;
+    text-align:center;
+    top:20%;
+    width:100%;
+    height:150px;
+    border-top:5px solid red;
+    border-bottom:5px solid red;
+    background:blue;
+    font-size:100px;
+}
+
+.headerDeco
+{
+    position:absolute;
+    width:100%;
+    height:50%;
+    top:40%;
+}
+
+
+.deco_child, .deco_child2, .deco_child3
+{
+    position:absolute;
+    width:0.5%;
+    top:13.5%;
+    background:white;
+    
+}
+
+
+.deco_child
+{
+    height:32%;
+    left:10%;    
+}
+
+.deco_child2
+{    
+    height:50%;
+    left:20%;  
+}
+
+.deco_child3
+{
+    height:60%;
+    left:30%;  
+}
+
+.roundDeco
+{
+   position:absolute;
+   width:120px;
+   height:120px;
+   border-radius:50%;
+   border: 5px solid blue;
+   left:-60px;
+   background:white;
+}
+
+.deco_child .roundDeco
+{
+    top:50%;
+}
+
+.deco_child2 .roundDeco
+{
+    top:70%;
+}
+
+.deco_child3 .roundDeco
+{
+    top:90%;
+}
+
+.projectImg
+{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+}
+
+@media (max-width: 1200px)
+{
+    .roundDeco
+    {
+        width:90px;
+        height:90px;
+        left:-48px;
+    }
+
+    .p_title
+    {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 800px)
+{
+    .roundDeco
+    {
+        width:60px;
+        height:60px;
+        left:-33px;
+    }
+
+    .p_title
+    {
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 600px)
+{
+    .roundDeco
+    {
+        width:50px;
+        height:50px;
+        left:-29px;
+    }
+
+    .p_title
+    {
+        font-size: 60px;
+    }
+}

@@ -1,71 +1,98 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    width:100%;
+    height:100%;
+}
+
 .MainSc{
-    background-color: blue;
-    margin:0;
-    
-
+    width:100%;
 }
 
-.headerBg{
-    background-color: black;
-    height: 100px;
-    width: 100vw;
-    align-items: center;
-    justify-content: right;
-    display:flex;
-    position: relative;
-    color: White;
-}
-
-.titleTxt{
-    color: White;
-    font-weight:bold;
-    font-size: 30px;
-    margin-right:10%;
-}
-
-.my-img{
-    position:absolute;
-    top:25px;
-    left:10%;
-    border: solid black 3px;
-    transform: translateX(-50%);
-    width: 150px;
-    height:150px;
-    border-radius: 50%;
-}
-
-
-
-.contactInfo{
-    display:flex;
-    justify-content: flex-end;
-    margin-right: 26px;
-    margin-top:10px;
-}
-
-.email{
-    text-align:right;
-    margin-top:60px;
-    margin-right:50px;
-}
-
-.github{
+.navBar
+{
+    z-index: 1000;
+    position:fixed;
+    width:100%;
+    height:60px;
     background:none;
-    border:0;
+    border-radius: 0 0 15px 15px;
+    border: 3px solid white;
 }
 
-.aboutMe{
-    font-size:45px;
-    font-weight:bold;
-    display:flex;
-    align-items: center;
-    width:80%;
-    height:80px;
-   
-    border-bottom: solid black 7px;
-    margin-top:100px;
-    margin-left:100px;
+.btnClass
+{
+    position: absolute;
+    display: flex;
+    width: 400px;
+    right: 0%;
+    height: 50px; 
+    top: 5%;
+    text-align: center;
+    align-items: center; 
+    
 }
 
+.btnClass a
+{
+    display: flex; 
+    align-items: center; 
+    border: none;
+    text-decoration: none;
+    justify-content: center;
+    background: none;
+    font-weight: bold;
+    height: 100%;
+    font-size: 15px;
+    color: white;
+    margin-right: 20%;
+    cursor: pointer;
+}
+
+.menuBtn
+    {
+        visibility: hidden;
+        width:40px;
+        height:40px;
+        border-radius:15%;
+        background:grey;
+        position:absolute;
+        top:10%;
+        right:9.2%;
+    }
+
+@media (max-width: 800px)
+{
+    
+    .btnClass
+    {
+        visibility: hidden;
+        display:absolute;
+        flex-direction: column;
+        background:black;
+        width:14%;
+        height:150px;
+        border-radius:0 0 10% 10%;
+        border: 3px solid white;
+        justify-content: center;
+        align-items: center;
+        right:4.8%;
+        top:100%;
+        
+    }
+
+    .menuBtn
+    {
+        visibility: visible;
+    }
+
+    .btnClass a
+    {
+        margin-left:20%;
+    }
+
+    
+}
 
 

@@ -1,28 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import profileImg from './assets/profile.png';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import PrivacyPolicy from './pages/Privacy_Policy';
 
-function MainSc() 
-{
-    return (
-        <div className="Main">
-            <div className="headerBg">
-            <h2 className="titleTxt">
-                Developer Seonwoo Oh
-            </h2>
-            <img src={profileImg} alt="Profile" className="my-img"/>
-            </div>    
-            <div className="email">Email: ekzmwor@gmail.com</div>
-            <div className="contactInfo">
-                <button className="github">GitHub: https://github.com/Lukasoh</button>
-            </div>
-            <div className="aboutMe">
-                <p>About Me</p>    
-            </div>            
-        </div>
-              
-    );
-}
+const container = document.getElementById('root');
+const root = createRoot(container);
 
-ReactDOM.render(<MainSc />, document.getElementById('root'));
+root.render(
+    <Router>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Privacy_Policy" element={<PrivacyPolicy />} />
+        </Routes>
+    </Router>
+);

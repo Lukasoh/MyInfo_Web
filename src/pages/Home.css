@@ -1,0 +1,659 @@
+.headerBg{
+    background-color: black;
+    height: 700px;
+    width: 100vw; 
+    display:flex;
+    position: relative;
+    color: White;
+    overflow: hidden;
+}
+
+.hdBgImg
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+
+.titleTxt{
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    color: black;
+    position:absolute;
+    font-weight:bold;
+    font-size: 80px;
+    top:7%;
+    left:5%;
+    
+}
+
+.subTitleTxt
+{
+    color: black;
+    position:absolute;
+    font-weight:bold;
+    font-size: 43px;
+    left:5%;
+    top:27%;
+
+}
+.logo
+{
+    width:70px;
+    height:70px;   
+}
+.logoImg
+{
+    position:absolute;
+    left:2%;
+    top:10%;
+    width:40px;
+    height:40px;
+    border-radius: 50px;
+}
+
+.div1
+{
+    position: relative;
+    width:100%;
+    height:1200px;
+}
+
+
+.div2
+
+{
+    position:relative;
+    display:flex;
+    width:100%;
+    height:800px;
+    background:black;
+}
+
+.div3
+{
+    position:relative;
+    width:100%;
+    height:800px;
+    
+}
+
+.div4
+{
+    position:relative;
+    width:100%;
+    height:1600px;
+    background:linear-gradient(to right, black, #909090);
+}
+
+.div4_1
+{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    position:relative;
+    flex-direction:column;
+    align-items: left;
+}
+
+.div4_1 > div
+{
+    border: 3px solid white;
+    height: 20%;
+    width:100%;
+}
+.div3_1
+{
+    width:100%;
+    height:45%;
+    position:absolute;
+    top:30%;
+    background:black;
+    border: 10px solid black;
+}
+
+.codingImg
+{
+    width: 35%;
+    height: 40%;
+    position:absolute;
+    right:5%;
+    bottom:15%;
+    
+}
+
+.contactInfo{
+    display:flex;
+    justify-content: flex-end;
+    margin-right: 26px;
+    margin-top:10px;
+}
+
+.email{
+    text-align:right;
+    margin-top:20px;
+    margin-right:50px;
+}
+
+.github{
+    background:#ddd;
+    cursor: pointer;
+    border:0;
+}
+
+.aboutMeTxt{
+    font-size:80px;
+    color:white;
+    font-weight:bold;
+    position:absolute;
+    top:0%;
+    left:5%;
+
+}
+
+.projectsTxt
+{
+    font-size:80px;
+    color:black;
+    font-weight:bold;
+    position:absolute;
+    top:3%;
+    left:5%;
+
+}
+.skillsTxt
+{
+    font-size:80px;
+    color:white;
+    font-weight:bold;
+    position:absolute;
+    left:5%;
+}
+.liGroup
+{
+    position:absolute;
+    top:20%;
+    left:5%;
+}
+.myInfo{
+    font-size:22px;
+    color:white;
+    margin-top:6%;
+}
+
+
+
+.slider-slide
+{
+    max-width:80%;
+    height:400px;
+    display:flex;
+    position:relative;
+    margin-left:5%;
+    margin-top:2%;
+    color:white;
+}
+
+.slider-child
+{
+     
+    border: 5px solid black; 
+    margin-right: 5%;
+    float:left;
+}
+
+.sliderInfo
+{
+    position:absolute;
+    left:35%;
+    
+    width:70%;
+    height:80%;
+}
+.slider-Img
+{
+    border-radius:15%;
+    width:300px;
+    height:300px;
+}
+.slider-text
+{
+    font-weight: bold;
+    width:100%;
+    height:20%;
+    
+    font-size: 60px;
+    margin-top:-0.1%;
+    align-items:last baseline;
+}
+
+.slider-p
+{
+    font-size:15px;
+    
+    height:60%;
+}
+
+
+
+.frontEnd
+{   
+    margin-top:25%;
+    width:60%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+}
+
+.backEnd
+{
+    width:60%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;   
+    margin-top:5%;
+    background: white;
+}
+
+.versionControl
+{
+    width:60%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;   
+    margin-top:5%;
+    background: white;
+}
+
+.developmentTools
+{
+    width:60%;
+    display:flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top:5%;
+    background: white;
+}
+
+.skillImg
+{
+    width:100px;
+    height:100px;
+    margin-top:2%;
+    margin-left:5%;
+}
+
+.skillTitle
+{
+    width:100%;
+    height:30%;
+    color:white;
+    font-weight:bold;
+    font-size:30px;
+    margin-top:-3.5%;
+    margin-bottom:3%;
+    margin-left:3%;
+    
+}
+
+
+
+.skillName
+{
+    color:black;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.skills
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 50px;
+    
+}
+
+.skillContainer
+{
+    display:flex;
+    justify-content: left;
+    width: 100%;
+}
+
+.typed-text {
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.typed-text.typed-cursor {
+    opacity: 1;
+}
+
+@media (max-width:1300px)
+{
+    .slider-text
+    {
+        font-size: 50px;       
+    }
+    .slider-p
+    {
+        font-size:13px;
+        
+        height:60%;
+    }
+    .slider-Img
+    {
+        
+        width:250px;
+        height:250px;
+    }
+
+    .div3_1
+    {
+        height: 40%;
+    }
+
+    .div4_1 > div
+    {
+        height:15%;
+    }
+}
+
+@media (max-width:1100px)
+{
+    .slider-text
+    {
+        font-size: 40px;       
+    }
+    .slider-p
+    {
+        font-size:11px;
+        
+        height:60%;
+    }
+    .slider-Img
+    {
+        
+        width:220px;
+        height:220px;
+    }
+
+    .sliderInfo
+    {
+        left:40%;
+    }
+
+    .div3_1
+    {
+        height: 35%;
+    }
+
+    .div4
+    {
+        height:1400px;
+    }
+
+    .div4_1 > div
+    {
+        height:13%;
+    }
+
+    .skillTitle
+    {
+        margin-top:-3.9%;
+        font-size:20px;
+    }
+
+    .frontEnd
+    {
+        margin-top:35%;
+    }
+
+    .skillName
+    {
+        font-size:12px;
+    }
+
+    .skills
+    {
+        margin: 0 30px;     
+    }
+}
+
+@media (max-width: 800px)
+{
+    .div3_1
+    {
+        height: 30%;
+    }
+
+    .btnClass
+    {
+        visibility: hidden;
+        display:absolute;
+        flex-direction: column;
+        background:black;
+        width:14%;
+        height:150px;
+        border-radius:0 0 10% 10%;
+        border: 3px solid white;
+        justify-content: center;
+        align-items: center;
+        right:4.8%;
+        top:100%;
+        
+    }
+
+    
+
+    .slider-text
+    {
+        font-size: 40px;       
+    }
+
+    .slider-p
+    {
+        font-size:9px;
+        margin-top:-5%;
+        height:60%;
+    }
+    
+
+    .slider-Img
+    {
+        
+        width:170px;
+        height:170px;
+    }
+
+    .menuBtn
+    {
+        visibility: visible;
+    }
+
+    .btnClass button
+    {
+        margin-left:30%;
+    }
+
+    .myInfo
+    {
+        font-size:20px;       
+    }
+
+    .div4_1 > div
+    {
+        height:13%;
+    }
+
+    .skillTitle
+    {
+        font-size:20px;
+        margin-top: -7%;
+    }
+
+    .frontEnd
+    {
+        margin-top:55%;
+    }
+
+    .skillName
+    {
+        font-size:12px;
+    }
+
+    .skills
+    {
+        margin: 0 15px;     
+    }
+
+    .skillImg
+    {
+        width:80px;
+        height:80px;
+    }
+
+    .backEnd, .versionControl, .developmentTools
+    {
+        margin-top:10%;
+    }
+    
+}
+
+@media (max-width: 700px)
+{
+    
+    .slider-text
+    {
+        position:absolute;
+        
+        font-size: 35px; 
+        top:60%;
+        right:40%;
+        text-align:center;
+    }
+
+    
+
+    .slider-child
+    {
+        margin-right:10%;
+    }
+
+    .slider-p
+    {
+        visibility: hidden;
+    }
+
+    .slider-Img
+    {
+        margin-left:30%;
+        width:180px;
+        height:180px;
+    }
+
+    
+
+    
+
+    
+    
+}
+
+@media (max-width: 600px)
+{
+    .menuBtn
+    {
+        right:8.5%;
+    }
+
+    .titleTxt
+    {
+        font-size:60px;
+    }
+
+    .subTitleTxt
+    {
+        font-size:30px;
+        margin-top:-10%;
+    }
+
+    .codingImg
+    {
+        width: 200px;
+        height: 200px;
+        position:absolute;
+        right:5%;
+        bottom:15%;
+    
+    }
+
+    .slider-text
+    {
+             
+       right:30%;
+        
+    }
+
+    .myInfo
+    {
+        font-size:15px;       
+    }
+
+    .liGroup
+    {
+        top:25%;
+    }
+
+    .skillContainer
+    {
+        height:13%;
+    }
+
+    .frontEnd
+    {
+        margin-top:70%;
+    }
+
+    .backEnd, .versionControl, .developmentTools
+    {
+        margin-top:13%;
+    }
+
+    .div4_1 > div
+    {
+        height:12%;
+    }
+
+    
+
+    .skillImg
+    {
+        width:70px;
+        height:70px;
+    }
+
+    .skillTitle
+    {
+        font-size:20px;
+        margin-top: -9%;
+    }
+
+    .skills
+    {
+        margin: 0 10px;  
+    }
+    
+
+    
+
+}
