@@ -4,47 +4,57 @@ import { Link } from 'react-router-dom';
 import React, { useRef } from 'react';
 
 
-import {images, useSetNavBg} from './Utils'
+import {
+    images, 
+    usePPOnClick,
+    useLanguageManager,
+    defaultTexts
+
+} from './Utils'
 
 
 function PrivacyPolicy() {
-    const navRef = useRef(null);
-    const imgRef = useRef(null);
+    
     const navBtnRef = useRef(null);
     const btnListRef = useRef(null);
-    
-    useSetNavBg(navRef, imgRef);
+    const ppRef1 = useRef(null);
+    const ppRef2 = useRef(null);
+    const ppContRef = useRef(null);
+
+    const { texts, language } = useLanguageManager();
+
+    const displayTexts = texts[language] || defaultTexts;
+
+
+    usePPOnClick(ppRef1, ppRef2, ppContRef); 
 
     return (
         <div className="Main">
-            <div className="headerBg" ref={imgRef}>
-                <div className="navBar" ref={navRef}>
+            <div className="pp_headerBg">
+                <div className="pp_gradientOverlay"></div>
+                <div className="pp_navBar">
                     <div className="logo">
                         <img src={images[0]} alt="Logo Img" className="logoImg"/>
                     </div>
                     <div className="btnClass" ref={btnListRef}>
-                        <Link to="/" className="Btn1">Home</Link>
-                        <Link to="/Projects" className="Btn2">Projects</Link>
-                        <Link to="/privacy-policy" className="Btn3">Privacy Policy</Link>
+                        <Link to="/" className="Btn1">{displayTexts.home}</Link>
+                        <Link to="/Projects" className="Btn2">{displayTexts.projects}</Link>
+                        <Link to="/Privacy_Policy" className="Btn3">{displayTexts.privacyPolicy}</Link>
                     </div>
                     <div className="menuBtn" ref={navBtnRef}></div>  
                 </div>
                 <div className="p_title">Privacy Policy</div>
-                <div className="headerDeco">
-                    <div className="deco_child">
-                        <div className="roundDeco"><img className="projectImg" src={images[0]} alt="Creative Point Img"></img></div>
-                    </div>
-                    <div className="deco_child2">
-                        <div className="roundDeco"><img className="projectImg" src={images[1]} alt="Life Lotto Img"></img></div>
-                    </div>
-                    <div className="deco_child3">
-                        <div className="roundDeco"><img className="projectImg" src={images[2]} alt="Endless Mansion Img"></img></div>
-                    </div>
-                </div>
-                     
             </div>
             <div className="p_div1">
-                Hi
+                <div className="pp_list1" ref={ppRef1} style={{ fontSize: '20px', transition: 'font-size 0.5s, transform 0.5s, visibility 0.5s' }}>
+                    Creative Point 개인정보 처리방침
+                </div>
+                <div className="pp_list2" ref={ppRef2} style={{ fontSize: '20px', transition: 'font-size 0.5s, transform 0.5s, visibility 0.5s' }}>
+                    Life Lotto 개인정보 처리방침
+                </div>
+                <div className="pp_content" ref={ppContRef} style={{ visibility: 'hidden', opacity: 0, transition: 'visibility 0s 0.1s, opacity 0.1s' }}>
+                    This is the content of the privacy policy.
+                </div>
             </div>
         </div>
     );

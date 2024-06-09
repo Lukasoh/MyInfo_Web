@@ -1,9 +1,29 @@
+@font-face
+{
+    font-family: 'EnglishFont';
+    src: url('./assets/fonts/Funtonalie.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: 'KoreanFont';
+    src: url('./assets/fonts/KCC-Hanbit.ttf') format('truetype');
+}
+
+
 body
 {
     margin: 0;
     padding: 0;
     width:100%;
     height:100%;
+    background:linear-gradient(to bottom, #1c2029, #505762);
+    font-family: 'EnglishFont', sans-serif;
+}
+
+:lang(ko)
+{
+    font-family: 'KoreanFont', sans-serif;
 }
 
 .MainSc{
@@ -16,7 +36,6 @@ body
     position:fixed;
     width:100%;
     height:60px;
-    background:none;
     border-radius: 0 0 15px 15px;
     border: 3px solid white;
 }
@@ -43,8 +62,9 @@ body
     justify-content: center;
     background: none;
     font-weight: bold;
+    width:20%;
     height: 100%;
-    font-size: 15px;
+    font-size: 13px;
     color: white;
     margin-right: 20%;
     cursor: pointer;
@@ -82,6 +102,12 @@ body
         
     }
 
+    .btnClass a
+    {
+        font-size: 8px;
+        width:100%;  
+    }
+
     .menuBtn
     {
         visibility: visible;
@@ -94,5 +120,21 @@ body
 
     
 }
+
+@media (max-width: 600px)
+{
+    
+    
+    .btnClass a
+    {
+        font-size: 7px;
+        width:100%;  
+    }
+
+    
+
+    
+}
+
 
 

@@ -5,205 +5,231 @@ import { Link } from 'react-router-dom';
 import '../index.css';
 import './Home.css';
 
-
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import {
-    bgImg,
-    images,
-    logoImg,
-    project_Title,
-    project_Info,
-    items,
-    useAnimateOnScroll,
-    useSetNavBg,
-    useTypeAnim,
-    useNavBtnClick
+  bgImg,
+  images,
+  styleImg,
+  cp_screenshots,
+  em_screenshots,
+  logoImg,
+  ImageSlider,
+  defaultTexts,
+  useAnimateOnScroll,
+  useSetNavBg,
+  useTypeAnim,
+  useNavBtnClick,
+  useLanguageManager,
+  useAnimateWidthOnScroll
+  
 } from './Utils';
 
+function Home() {
+  const titleRef = useRef(null);
+  const navRef = useRef(null);
+  const imgRef = useRef(null);
+  const aboutMeRef = useRef(null);
 
-const ImageSlider = () => {
-    const setting = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    };
-    return(
-        <Slider {...setting}>
-            {images.map((image, index) => (
-                <div key={index} className="slider-slide">
-                    <img src={image} className="slider-child slider-Img" alt={`Slide ${index + 1}`} />
-                    <div className="sliderInfo">
-                        <p className = "slider-text">{project_Title[index]}</p>
-                        <p className = "slider-p">{project_Info[index]}</p> 
-                    </div>
-                                                                        
-                </div>
-                
-            ))}
-        </Slider>
-    )
-}
+  const navBtnRef = useRef(null);
+  const btnListRef = useRef(null);
 
+  const div4Ref = useRef(null);
 
-function Home() 
-{
-    const titleRef = useRef(null);
-    const navRef =useRef(null);
-    const imgRef = useRef(null);
-    const aboutMeRef = useRef(null);
+ 
 
-    const navBtnRef = useRef(null);
-    const btnListRef = useRef(null);
-    
-    
+  
+  useAnimateOnScroll(titleRef);
+  useSetNavBg(navRef, imgRef);
+  useNavBtnClick(navBtnRef, btnListRef);
+  useAnimateWidthOnScroll(div4Ref);
+  
 
-    useAnimateOnScroll(titleRef);
-    useSetNavBg(navRef, imgRef);
-    useNavBtnClick(navBtnRef, btnListRef);
+  const startTyping = useTypeAnim(aboutMeRef);
 
-    const startTyping = useTypeAnim(aboutMeRef);
+  const { texts, language } = useLanguageManager();
 
-    return (
-        <div className="Main">
-            <div className="headerBg">
-                <img src={bgImg[0]} alt ="Background Img" className = "hdBgImg" ref={imgRef}/>
-                <div className="navBar" ref={navRef}>
-                    <div className="logo">
-                        <img src={images[0]} alt="Logo Img" className="logoImg"/>
-                    </div>
-                    <div className="btnClass" ref={btnListRef}>
-                        <Link to="/" className="Btn1">Home</Link>
-                        <Link to="/Projects" className="Btn2">Projects</Link>
-                        <Link to="/Privacy_Policy" className="Btn3">Privacy Policy</Link>
-                    </div>
-                    <div className="menuBtn" ref={navBtnRef}></div>  
-                </div>
-                     
-            </div>    
-            <div className="div1">
-                <p className ="titleTxt animate__animated animate__fadeIn" ref={titleRef}>개발자 오선우</p>
-                <p className ="subTitleTxt">"완성을 향한 여정"</p>
-                <img src= {bgImg[1]} alt = "Coding Img" className="codingImg"/>
-            </div>
-            <div className ="div2" ref={aboutMeRef}>
-                <p className ="aboutMeTxt">About Me</p>
-                <ul className="liGroup">
-                    {items.map((item, index) => (
-                        <li className="myInfo" key={index}>
-                            {startTyping ? (
-                                <ReactTyped
-                                    strings={[item]}
-                                    typeSpeed={40}
-                                    backSpeed={40}
-                                    showCursor={true}
-                                />
-                            ) : (
-                                <span></span>  
-                            )}
-                              
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <div className="div3">
-                <p className ="projectsTxt">Projects</p>
-                <div className="div3_1">
-                    <ImageSlider></ImageSlider>
-                </div>
-                
-            </div>
-            <div className="div4">
-                <p className ="skillsTxt">Skills</p>
-                <div className="div4_1">
-                    <div className="frontEnd">
-                        <div className="skillTitle">Front-End</div>
-                        <div className="skillContainer">
-                            <div className="skills">
-                                <img src={logoImg[0]} className="skillImg" alt="HTML LogoImg"/>
-                                <p className="skillName">HTML</p>
-                            </div>
-                            <div className="skills">
-                                <img src={logoImg[1]} className="skillImg" alt="CSS LogoImg"/>
-                                <p className="skillName">CSS</p>
-                            </div>
-                            <div className="skills">
-                                <img src={logoImg[2]} className="skillImg" alt="JavaScript LogoImg"/>
-                                <p className="skillName">JSP</p>
-                            </div>
-                            <div className="skills">
-                                <img src={logoImg[3]} className="skillImg" alt="Adobe XD LogoImg"/> 
-                                <p className="skillName">Adobe XD</p> 
-                            </div>
-                            <div className="skills">
-                                <img src={logoImg[4]} className="skillImg" alt="Adobe Photoshop LogoImg"/> 
-                                <p className="skillName">Adove Photoshop</p>  
-                            </div>
-                        </div>
-                        
-                        
-                        
-                        
-                    </div>
+  const displayTexts = texts[language] || defaultTexts;
 
-                    <div className="backEnd">
-                        <div className="skillTitle">Back-End</div>
-                        <div className="skillContainer">
-                            <div className="skills">
-                                <img src={logoImg[5]} className="skillImg" alt="C# LogoImg"/>
-                                <p className="skillName">C#</p>
-                            </div>
-                            <div className="skills">
-                                <img src={logoImg[6]} className="skillImg" alt="Python LogoImg"/>
-                                <p className="skillName">Python</p>
-                            </div>
-                            <div className="skills">
-                                <img src={logoImg[7]} className="skillImg" alt="Java LogoImg"/>
-                                <p className="skillName">Java</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="versionControl">
-                    <div className="skillTitle">Version Control</div>
-                    <div className="skillContainer">
-                            <div className="skills">
-                                <img src={logoImg[8]} className="skillImg" alt="GitHub LogoImg"/>
-                                <p className="skillName">GitHub</p>
-                            </div>
-                           
-                        </div>    
-                    </div>
-                    <div className="developmentTools">
-                        <div className="skillTitle">Development Tools</div>
-                        <div className="skillContainer">
-                            <div className="skills">
-                                <img src={logoImg[9]} className="skillImg" alt="Eclipse LogoImg"/>
-                                <p className="skillName">Eclipse</p>
-                            </div>
-                            <div className="skills">
-                                <img src={logoImg[10]} className="skillImg" alt="Vs LogoImg"/>
-                                <p className="skillName">Visual Studio</p>
-                            </div>
-                            <div className="skills">
-                                <img src={logoImg[11]} className="skillImg" alt="Vs Code LogoImg"/>
-                                <p className="skillName">Visual Studio Code</p>
-                            </div>
-                            <div className="skills">
-                                <img src={logoImg[12]} className="skillImg" alt="Unity LogoImg"/>
-                                <p className="skillName">Unity Engine</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                
+  console.log('displayTexts:', displayTexts);
+
+  const items = [
+    displayTexts.education_1 || "Graduated from Gimpo Foreign Language High School in 2018",
+    displayTexts.education_2 || "Expected to graduate from Coventry University with a degree in Computer Science in 2024",
+    displayTexts.experience_1 || "Completed language training in Singapore",
+    displayTexts.experience_2 || "Published 2 Android applications on the Google Play Store"
+  ];
+
+  const cp_skills = [
+    "Unity Engine", "C#", "Visual Studio", "Adobe Photoshop" 
+  ]
+
+  return (
+    <div className="Main">
+      <div className="navBar" ref={navRef}>
+        <div className="logo">
+          <img src={images[0]} alt="Logo Img" className="logoImg" />
         </div>
+        <div className="btnClass" ref={btnListRef}>
+          <Link to="/" className="Btn1">{displayTexts.home}</Link>
+          <Link to="/Projects" className="Btn2">{displayTexts.projects}</Link>
+          <Link to="/CreativePoint" className="Btn3">{displayTexts.privacyPolicy}</Link>
+        </div>
+        <div className="menuBtn" ref={navBtnRef}></div>
+      </div>
+      <div className="headerBg" ref={imgRef}>
+        <img src={bgImg[0]} alt="Background Img" className="hdBgImg" />
+        <div className="gradientOverlay"></div>
+      </div>
+      <div className="div1">
+        <p className="titleTxt" ref={titleRef}>{displayTexts.developer}</p>
+        <p className="subTitleTxt">{displayTexts.journey}</p>
+        <div className="my_intro">{displayTexts.myInfo}</div>
+      </div>
+      <div className="div2" ref={aboutMeRef}>
+        <div className="div2_1"></div>
+        <div className="halfRound_border"></div>
+        <div className="div2_2">
+          <img className="cartoonImg" src={styleImg[0]} alt="Profile Cartoon Img"/>
+        </div>
+        <p className="aboutMeTxt">{displayTexts.aboutMe}</p>
+        <ul className="liGroup">
+          {items.map((item, index) => (
+            <li className="myInfo" key={index}>
+              {startTyping ? (
+                <ReactTyped
+                  strings={[item]}
+                  typeSpeed={20}
+                  backSpeed={20}
+                  showCursor={true}
+                />
+              ) : (
+                <span></span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="div3">
+        <p className="projectsTxt">{displayTexts.projects}</p>
+        <div className="div3_1">
+          <img className="bubble1" src={styleImg[1]} alt="bubble Img"></img>
+          <img className="bubble2" src={styleImg[2]} alt="bubble Img"></img>
+          <img className="bubble3" src={styleImg[3]} alt="bubble Img"></img>
+          <img className="bubble4" src={styleImg[4]} alt="bubble Img"></img>
+        </div>
+        <div className="projectSubTxt">{displayTexts.pjIntro}</div>
+        <div className="project_group">
+          <div className="project_container">
+            <ImageSlider images={cp_screenshots} screenSize="port_img"/>
+            <div className="pj_info">
+              <div className="project_mb">{displayTexts.solo}</div>
+              <div className="project_tt">Creative Point</div>
+              <div className="github_link">
+                <button className="github_btn">
+                  <img className="playstoreLogo" src={logoImg[13]} alt="Google PlayStore Logo"></img>
+                  <div className="linkBtn_info">PlayStore</div>
+                </button>
+                <button className="github_btn">
+                  <img className="githubLogo" src={logoImg[8]} alt="GitHub Logo"></img>
+                  <div className="linkBtn_info">GitHub</div>
+                </button>
+              </div>
+              <div className="project_pd">2020.05 ~ 2020.10</div>
+              <div className="project_if">{displayTexts.cpInfo}</div>
               
-    );
+              <div className="project_func">
+                <div className="project_func_tt">{displayTexts.mainF}</div>
+                <div className="project_func_items">
+                  <p>{displayTexts.cpFeature1}</p>
+                  <p>{displayTexts.cpFeature2}</p>
+                  <p>{displayTexts.cpFeature3}</p>
+                </div>
+              </div>
+              <div className="project_skills">
+                {cp_skills.map((item, index) => (
+                  <div className="skill_items" key={index}>
+                    {item}
+                  </div>
+                ))}
+              </div>
+          </div>
+          </div>
+          <div className="project_container">
+            <ImageSlider images={em_screenshots} screenSize="land_img"/>
+            <div className="pj_info">
+            <div className="project_mb">{displayTexts.solo}</div>
+              <div className="project_tt">Endless Mansion</div>
+              <div className="github_link">
+                <button className="github_btn">
+                  <img className="playstoreLogo" src={logoImg[13]} alt="Google PlayStore Logo"></img>
+                  <div className="linkBtn_info">PlayStore</div>
+                </button>
+                <button className="github_btn">
+                  <img className="githubLogo" src={logoImg[8]} alt="GitHub Logo"></img>
+                  <div className="linkBtn_info">GitHub</div>
+                </button>
+              </div>
+              <div className="project_pd">2023.11 ~ 2024.02</div>
+              <div className="project_if">{displayTexts.emInfo}</div>
+              
+              <div className="project_func">
+                <div className="project_func_tt">{displayTexts.mainF}</div>
+                <div className="project_func_items">
+                  <p>{displayTexts.emFeature1}</p>
+                  <p>{displayTexts.emFeature2}</p>
+                  <p>{displayTexts.emFeature3}</p>
+                  <p>{displayTexts.emFeature4}</p>
+                  <p>{displayTexts.emFeature5}</p>
+                  <p>{displayTexts.emFeature6}</p>
+                </div>
+              </div>
+              <div className="project_skills">
+                {cp_skills.map((item, index) => (
+                  <div className="skill_items" key={index}>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="project_container">
+            <ImageSlider images={images} screenSize="full_img"/>
+            <div className="pj_info">
+              <div className="project_mb">{displayTexts.solo}</div>
+              <div className="project_tt">{displayTexts.portf}</div>
+              <div className="github_link">
+                <button className="github_btn">
+                  <img className="githubLogo" src={logoImg[8]} alt="GitHub Logo"></img>
+                  <div className="linkBtn_info">GitHub</div>
+                </button>
+                
+              </div>
+              <div className="project_pd">2024.05 ~ 2024.06</div>
+              <div className="project_if">11111111111111111111122222222222222223333333333333344444444444445555555555555</div>
+              
+              <div className="project_func">
+                <div className="project_func_tt">{displayTexts.mainF}</div>
+                <div className="project_func_items">
+                  <p>한글 / 영어 언어 선택</p>
+                  <p>플레이어 데이터에 따른 다음 스테이지 활성화 / 비활성화</p>
+                  <p>광고 시청에 따른 힌트 보상 제공</p>
+                </div>
+              </div>
+              <div className="project_skills">
+                {cp_skills.map((item, index) => (
+                  <div className="skill_items" key={index}>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Home;

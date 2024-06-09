@@ -1,12 +1,13 @@
-.headerBg{
-    background-color: black;
-    height: 700px;
-    width: 100vw; 
-    display:flex;
-    position: relative;
-    color: White;
-    overflow: hidden;
+/* Header */
+.headerBg
+{
+    background:black;
+    height:800px;
+    width:100%; 
+    position:relative;
 }
+
+
 
 .hdBgImg
 {
@@ -16,31 +17,20 @@
     position: absolute;
     left: 0;
     top: 0;
+    opacity: 0.8;
 
 }
 
-.titleTxt{
-    animation-duration: 3s;
-    animation-fill-mode: both;
-    color: black;
-    position:absolute;
-    font-weight:bold;
-    font-size: 80px;
-    top:7%;
-    left:5%;
-    
+.gradientOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(34, 40, 49, 0) 70%, rgba(34, 40, 49, 1) 100%);
+    pointer-events: none; 
 }
 
-.subTitleTxt
-{
-    color: black;
-    position:absolute;
-    font-weight:bold;
-    font-size: 43px;
-    left:5%;
-    top:27%;
-
-}
 .logo
 {
     width:70px;
@@ -56,6 +46,9 @@
     border-radius: 50px;
 }
 
+
+/* Title Txt Div */
+
 .div1
 {
     position: relative;
@@ -63,87 +56,111 @@
     height:1200px;
 }
 
+.titleTxt{
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    color: white;
+    position:absolute;
+    font-weight:bold;
+    font-size: 80px;
+    top:7%;
+    left:5%;
+    
+}
+
+.subTitleTxt
+{
+    color: white;
+    position:absolute;
+    font-weight:bold;
+    font-size: 43px;
+    left:5%;
+    top:27%;
+
+}
+
+.my_intro
+{
+    position:absolute;
+    display:flex;
+    align-items:center;
+    width:60%;
+    line-height:2;
+    height:40%;
+    font-size:20px;
+    color:white;
+    top:50%;
+    left:5%;
+}
+
+
+/* About Me Div */
 
 .div2
 
 {
     position:relative;
     display:flex;
-    width:100%;
-    height:800px;
-    background:black;
+    width:95%;
+    left:2.5%;
+    border-radius:1%;
+    height:700px;
+    background:#1b2129;
+    border-top: 8px solid #12161b;
+    border-right: 8px solid #12161b;
 }
 
-.div3
+.div2_1
 {
-    position:relative;
-    width:100%;
-    height:800px;
-    
-}
-
-.div4
-{
-    position:relative;
-    width:100%;
-    height:1600px;
-    background:linear-gradient(to right, black, #909090);
-}
-
-.div4_1
-{
-    width: 100%;
-    height: 100%;
-    display:flex;
-    position:relative;
-    flex-direction:column;
-    align-items: left;
-}
-
-.div4_1 > div
-{
-    border: 3px solid white;
-    height: 20%;
-    width:100%;
-}
-.div3_1
-{
-    width:100%;
-    height:45%;
     position:absolute;
     top:30%;
-    background:black;
-    border: 10px solid black;
-}
-
-.codingImg
-{
-    width: 35%;
-    height: 40%;
-    position:absolute;
-    right:5%;
-    bottom:15%;
+    width: 60vh;
+    height: 10px;
+    background: rgb(0, 173, 181);
     
 }
 
-.contactInfo{
-    display:flex;
-    justify-content: flex-end;
-    margin-right: 26px;
-    margin-top:10px;
+.div2_2, .halfRound_border, .cartoonImg
+{
+    visibility:visible;
 }
 
-.email{
-    text-align:right;
-    margin-top:20px;
-    margin-right:50px;
+.div2_2
+{
+    position:absolute;
+    width:30%;
+    height:60%;
+    right:5%;
+    top:25%;
+    border-radius:50%;
+    border-bottom: 20px solid white;
+    overflow: hidden;
 }
 
-.github{
-    background:#ddd;
-    cursor: pointer;
-    border:0;
+.halfRound_border
+{
+    position:absolute;
+    width:30%;
+    height:60%;
+    right:5%;
+    top:27%;
+    border-radius:50%;
+    border-top: 20px solid #00adb5;
+    border-left: 25px solid #00adb5;
+
+    
 }
+
+
+
+
+
+.cartoonImg
+{
+    width:100%;
+    height:100%;
+}
+
 
 .aboutMeTxt{
     font-size:80px;
@@ -155,287 +172,380 @@
 
 }
 
+.liGroup
+{
+    position:absolute;
+    top:40%;
+    left:3%;
+}
+.myInfo
+{
+    font-size:22px;
+    color:white;
+    margin-top:6%;
+}
+
+/* Project Div */
+
+.div3
+{
+    width:100%;
+    height:5000px;
+    margin-top:15%;
+    background:black;
+    position:relative;
+}
+
+.div3_1
+{
+    position:relative;
+    width:100%;
+    height:1000px;
+}
+
+
 .projectsTxt
 {
     font-size:80px;
-    color:black;
+    color:white;
     font-weight:bold;
     position:absolute;
     top:3%;
     left:5%;
 
 }
-.skillsTxt
+
+.projectSubTxt
 {
-    font-size:80px;
+    font-size:60px;
     color:white;
-    font-weight:bold;
-    position:absolute;
-    left:5%;
-}
-.liGroup
-{
-    position:absolute;
-    top:20%;
-    left:5%;
-}
-.myInfo{
-    font-size:22px;
-    color:white;
-    margin-top:6%;
+    position:flex;
+    text-align: center;
+    align-items: center;
+    margin-top:35%;
 }
 
 
-
-.slider-slide
-{
-    max-width:80%;
-    height:400px;
-    display:flex;
-    position:relative;
-    margin-left:5%;
-    margin-top:2%;
-    color:white;
-}
-
-.slider-child
-{
-     
-    border: 5px solid black; 
-    margin-right: 5%;
-    float:left;
-}
-
-.sliderInfo
+.bubble1, .bubble2, .bubble3, .bubble4
 {
     position:absolute;
-    left:35%;
-    
-    width:70%;
-    height:80%;
-}
-.slider-Img
-{
-    border-radius:15%;
     width:300px;
     height:300px;
 }
-.slider-text
+
+.bubble1
 {
-    font-weight: bold;
-    width:100%;
-    height:20%;
-    
-    font-size: 60px;
-    margin-top:-0.1%;
-    align-items:last baseline;
+    animation: bubbleMove2 3s ease-in-out infinite alternate;
+    top:80%;
+    left:20%;
 }
 
-.slider-p
+.bubble2
 {
-    font-size:15px;
-    
-    height:60%;
+    animation: bubbleMove1 3s ease-in-out infinite alternate;
+    top:50%;
+    left:30%;
+    width:500px;
+    height:500px;
+   
 }
 
+.bubble3
+{
+    animation: bubbleMove3 3s ease-in-out infinite alternate;
+    top:80%;
+    left:57%;
+}
 
+.bubble4
+{
+    animation: bubbleMove2 3s ease-in-out infinite alternate;
+    top:44%;
+    left:50%;
+    width:400px;
+    height:400px;
+   
+}
 
-.frontEnd
-{   
+.project_group
+{
+    width:95%;
+    height:40%;
+    margin-left:2.5%;
     margin-top:25%;
-    width:60%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    background: white;
 }
 
-.backEnd
-{
-    width:60%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;   
-    margin-top:5%;
-    background: white;
-}
-
-.versionControl
-{
-    width:60%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;   
-    margin-top:5%;
-    background: white;
-}
-
-.developmentTools
-{
-    width:60%;
-    display:flex;
-    flex-direction: column;
-    align-items: center; 
-    margin-top:5%;
-    background: white;
-}
-
-.skillImg
-{
-    width:100px;
-    height:100px;
-    margin-top:2%;
-    margin-left:5%;
-}
-
-.skillTitle
+.project_container
 {
     width:100%;
     height:30%;
-    color:white;
-    font-weight:bold;
-    font-size:30px;
-    margin-top:-3.5%;
-    margin-bottom:3%;
-    margin-left:3%;
-    
+    border:1px solid white;
+    margin-top:5%;
+    border-radius:1%;
+    position:relative;
+    background: linear-gradient(to bottom, rgb(46, 56, 71) 100%, rgba(34, 40, 49, 1) 100%);
 }
 
-
-
-.skillName
+.pj_imgBg
 {
-    color:black;
-    font-size:20px;
-    font-weight:bold;
-}
-
-.skills
-{
-    display: flex;
-    flex-direction: column;
+    width:35%;
+    height:80%;
+    position:absolute;
+    margin-left:2%;
+    margin-top:3%;
+    display:flex;
+    justify-content: center;
     align-items: center;
-    margin: 0 50px;
-    
 }
 
-.skillContainer
+.port_img
+{
+    width:60%;
+    height:100%;
+}
+
+.land_img
+{
+    width:100%;
+    height:55%;
+}
+
+.full_img
+{
+    width:100%;
+    height:100%;
+}
+
+.backBtn, .nextBtn
+{
+    position: absolute;
+    top:90%;
+    width:100px;
+    height:50px;
+}
+
+.backBtn
+{
+    left:11%;
+}
+
+.nextBtn
+{
+    left:21%;
+}
+
+/* project details */
+
+.pj_info
+{
+    width:55%;
+    height:95%;
+    border-left: 3px solid white;
+    position:absolute;
+    top:0.1%;
+    left:43%;
+}
+
+.project_mb, .project_tt, .project_pd, .project_if, .github_link, .project_func, .project_skills
 {
     display:flex;
-    justify-content: left;
-    width: 100%;
+    align-items: center;
+    margin-left:5%;
+    font-weight:100;
 }
 
-.typed-text {
-    font-size: 22px;
-    color: white;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+.project_mb
+{
+    margin-top:5%;
+    width:30%;
+    margin-left:6%;
+    
 }
 
-.typed-text.typed-cursor {
-    opacity: 1;
+.project_tt
+{
+    font-size:40px;
+    width:100%;
 }
+
+.project_pd
+{
+    position:absolute;
+    top:2%;
+    margin-left:75%;
+    width:25%;
+    font-size:23px;
+}
+
+.project_if
+{
+    margin-top:3%;
+    width:90%;
+    font-size:15px;
+    
+}
+
+.github_link
+{
+    height:10%;
+    margin-top:1%;
+    width:60%;
+}
+
+.github_btn
+{
+    width:27%;
+    height:70%;
+    margin-left:2%;
+    border-radius:7%;
+    display:flex;
+}
+
+.playstoreLogo, .githubLogo
+{
+    position:relative;
+    display:flex;
+    align-items: left;
+    align-items: center;
+    width:25%;
+    height:90%;
+    margin-top:1.5%; 
+}
+
+.linkBtn_info
+{
+    display:flex;
+    font-weight:bold;
+    height:100%;
+    justify-content: center;
+    align-items: center;
+    margin-left:13%;
+}
+.project_func
+{   
+    position:flex;
+    margin-top:5%;
+}
+
+.project_func_items
+{
+    height:100%;
+    width:85%;
+    font-size:13px;
+}
+
+.project_func_tt
+{
+    height:100%;
+    width:15%;
+    font-weight:bold;
+    font-size:15px;
+    display:flex;
+    align-items: center;
+}
+
+.project_skills
+{
+    margin-top:1%;
+    flex-wrap: wrap;
+}
+
+.skill_items
+{
+    width:130px;
+    height:50px;
+    font-size:15px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:3%;
+    margin-top:3%;
+    border-radius:7%;
+    background:black;
+}
+
+
+
+
+@keyframes bubbleMove1 {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(50px);
+    }
+}
+
+@keyframes bubbleMove2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(30px);
+    }
+}
+
+@keyframes bubbleMove3 {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(70px);
+    }
+}
+
+
+
 
 @media (max-width:1300px)
 {
-    .slider-text
-    {
-        font-size: 50px;       
-    }
-    .slider-p
-    {
-        font-size:13px;
-        
-        height:60%;
-    }
-    .slider-Img
-    {
-        
-        width:250px;
-        height:250px;
-    }
-
-    .div3_1
-    {
-        height: 40%;
-    }
-
     .div4_1 > div
     {
         height:15%;
+    }
+
+    .div2_2, .halfRound_border, .cartoonImg
+    {
+        visibility:hidden;
     }
 }
 
 @media (max-width:1100px)
 {
-    .slider-text
-    {
-        font-size: 40px;       
-    }
-    .slider-p
-    {
-        font-size:11px;
-        
-        height:60%;
-    }
-    .slider-Img
-    {
-        
-        width:220px;
-        height:220px;
-    }
 
-    .sliderInfo
-    {
-        left:40%;
-    }
+    
 
-    .div3_1
-    {
-        height: 35%;
-    }
+    
+    
 
-    .div4
-    {
-        height:1400px;
-    }
+    
 
-    .div4_1 > div
-    {
-        height:13%;
-    }
+    
 
-    .skillTitle
+    
+    .pj_container
     {
-        margin-top:-3.9%;
-        font-size:20px;
+    width: 25%;
+    height: 50%;   
     }
+    .pj_Titletext
+    {
+    
+    font-size: 25px;
+    
+    }
+}
 
-    .frontEnd
-    {
-        margin-top:35%;
-    }
+@media (max-width:1000px)
+{
+    
 
-    .skillName
-    {
-        font-size:12px;
-    }
+    
 
-    .skills
-    {
-        margin: 0 30px;     
-    }
 }
 
 @media (max-width: 800px)
 {
-    .div3_1
-    {
-        height: 30%;
-    }
-
     .btnClass
     {
         visibility: hidden;
@@ -453,28 +563,6 @@
         
     }
 
-    
-
-    .slider-text
-    {
-        font-size: 40px;       
-    }
-
-    .slider-p
-    {
-        font-size:9px;
-        margin-top:-5%;
-        height:60%;
-    }
-    
-
-    .slider-Img
-    {
-        
-        width:170px;
-        height:170px;
-    }
-
     .menuBtn
     {
         visibility: visible;
@@ -490,83 +578,39 @@
         font-size:20px;       
     }
 
-    .div4_1 > div
-    {
-        height:13%;
-    }
+    
 
-    .skillTitle
-    {
-        font-size:20px;
-        margin-top: -7%;
-    }
+   
 
-    .frontEnd
-    {
-        margin-top:55%;
-    }
+    
+    
 
-    .skillName
-    {
-        font-size:12px;
-    }
+    
 
-    .skills
-    {
-        margin: 0 15px;     
-    }
+    
 
-    .skillImg
-    {
-        width:80px;
-        height:80px;
-    }
-
-    .backEnd, .versionControl, .developmentTools
-    {
-        margin-top:10%;
-    }
+    
     
 }
 
 @media (max-width: 700px)
 {
     
-    .slider-text
+
+    .div3
     {
-        position:absolute;
-        
-        font-size: 35px; 
-        top:60%;
-        right:40%;
-        text-align:center;
+        height:1500px;
     }
-
-    
-
-    .slider-child
+    .div3_1
     {
-        margin-right:10%;
+    flex-direction: column;
+    align-items:center;
     }
-
-    .slider-p
+    .pj_container
     {
-        visibility: hidden;
+        width:50%;
+        height:50%;
     }
-
-    .slider-Img
-    {
-        margin-left:30%;
-        width:180px;
-        height:180px;
-    }
-
-    
-
-    
-
-    
-    
 }
 
 @media (max-width: 600px)
@@ -587,22 +631,7 @@
         margin-top:-10%;
     }
 
-    .codingImg
-    {
-        width: 200px;
-        height: 200px;
-        position:absolute;
-        right:5%;
-        bottom:15%;
     
-    }
-
-    .slider-text
-    {
-             
-       right:30%;
-        
-    }
 
     .myInfo
     {
@@ -611,49 +640,7 @@
 
     .liGroup
     {
-        top:25%;
+        top:45%;
     }
-
-    .skillContainer
-    {
-        height:13%;
-    }
-
-    .frontEnd
-    {
-        margin-top:70%;
-    }
-
-    .backEnd, .versionControl, .developmentTools
-    {
-        margin-top:13%;
-    }
-
-    .div4_1 > div
-    {
-        height:12%;
-    }
-
-    
-
-    .skillImg
-    {
-        width:70px;
-        height:70px;
-    }
-
-    .skillTitle
-    {
-        font-size:20px;
-        margin-top: -9%;
-    }
-
-    .skills
-    {
-        margin: 0 10px;  
-    }
-    
-
-    
 
 }
