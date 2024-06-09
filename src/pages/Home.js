@@ -9,6 +9,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import {
+  
   bgImg,
   images,
   styleImg,
@@ -36,6 +37,14 @@ function Home() {
   const btnListRef = useRef(null);
 
   const div4Ref = useRef(null);
+
+  const handleScroll = (topVal) => {
+    window.scrollTo({
+      top: topVal, 
+      left: 0, 
+      behavior: 'smooth' 
+    });
+  };
 
  
 
@@ -72,9 +81,11 @@ function Home() {
           <img src={images[0]} alt="Logo Img" className="logoImg" />
         </div>
         <div className="btnClass" ref={btnListRef}>
-          <Link to="/" className="Btn1">{displayTexts.home}</Link>
-          <Link to="/Projects" className="Btn2">{displayTexts.projects}</Link>
-          <Link to="/CreativePoint" className="Btn3">{displayTexts.privacyPolicy}</Link>
+          <button onClick={() => handleScroll(2000)} className="Btn1">{displayTexts.aboutMe}</button>
+          <button onClick={() => handleScroll(4870)} className="Btn2">Creative Point</button>
+          <button onClick={() => handleScroll(5545)} className="Btn3">Endless Mansion</button>
+          <button onClick={() => handleScroll(6220)} className="Btn4">{displayTexts.portf}</button>
+          
         </div>
         <div className="menuBtn" ref={navBtnRef}></div>
       </div>
@@ -127,14 +138,14 @@ function Home() {
               <div className="project_mb">{displayTexts.solo}</div>
               <div className="project_tt">Creative Point</div>
               <div className="github_link">
-                <button className="github_btn">
+                <a className="github_btn" href="https://play.google.com/store/apps/details?id=com.LKGenius.CreativePoint" target="_blank" rel="noopener noreferrer">
                   <img className="playstoreLogo" src={logoImg[13]} alt="Google PlayStore Logo"></img>
                   <div className="linkBtn_info">PlayStore</div>
-                </button>
-                <button className="github_btn">
+                </a>
+                <a className="github_btn" href="https://github.com/Lukasoh/CreativePoint" target="_blank" rel="noopener noreferrer">
                   <img className="githubLogo" src={logoImg[8]} alt="GitHub Logo"></img>
                   <div className="linkBtn_info">GitHub</div>
-                </button>
+                </a>
               </div>
               <div className="project_pd">2020.05 ~ 2020.10</div>
               <div className="project_if">{displayTexts.cpInfo}</div>
@@ -162,14 +173,10 @@ function Home() {
             <div className="project_mb">{displayTexts.solo}</div>
               <div className="project_tt">Endless Mansion</div>
               <div className="github_link">
-                <button className="github_btn">
-                  <img className="playstoreLogo" src={logoImg[13]} alt="Google PlayStore Logo"></img>
-                  <div className="linkBtn_info">PlayStore</div>
-                </button>
-                <button className="github_btn">
+                <a className="github_btn" href="https://github.com/Lukasoh/EndlessMansion" target="_blank" rel="noopener noreferrer">
                   <img className="githubLogo" src={logoImg[8]} alt="GitHub Logo"></img>
                   <div className="linkBtn_info">GitHub</div>
-                </button>
+                </a>
               </div>
               <div className="project_pd">2023.11 ~ 2024.02</div>
               <div className="project_if">{displayTexts.emInfo}</div>
@@ -200,10 +207,10 @@ function Home() {
               <div className="project_mb">{displayTexts.solo}</div>
               <div className="project_tt">{displayTexts.portf}</div>
               <div className="github_link">
-                <button className="github_btn">
+                <a className="github_btn" href="https://github.com/Lukasoh/MyInfo_Web" target="_blank" rel="noopener noreferrer">
                   <img className="githubLogo" src={logoImg[8]} alt="GitHub Logo"></img>
                   <div className="linkBtn_info">GitHub</div>
-                </button>
+                </a>
                 
               </div>
               <div className="project_pd">2024.05 ~ 2024.06</div>

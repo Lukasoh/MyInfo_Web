@@ -44,6 +44,10 @@ import githublogo from '../assets/GitHubLogo.png';
 import eclipselogo from '../assets/EclipseLogo.png';
 import playstorelogo from '../assets/Playstore.png';
 
+//Button Images
+import backBtn from '../assets/BackBtn.png';
+import nextBtn from '../assets/NextBtn.png';
+
 //Creative Point Screenshots
 import cp_stage1 from '../assets/CP_stage.png';
 import cp_stage2 from '../assets/CP_stage2.png';
@@ -78,6 +82,11 @@ export const ScrollToTop = () => {
   
     return null;
 };
+
+export const btnImg = [
+    backBtn,
+    nextBtn
+]
 
 export const logoImg = [
     csslogo,
@@ -388,7 +397,7 @@ export const useProjectInfo = () => {
 export const getBrowserLang = () => {
     const lang = navigator.language || navigator.userLanguage;
     if (lang.startsWith('ko')) {
-        return 'en';
+        return 'ko';
       }
     return 'en';
 }; 
@@ -486,9 +495,14 @@ export const ImageSlider = ({ images, screenSize }) => {
           <img className={screenSize} src={images[currentIndex]} alt="cp_img" />
         </div>
         <div>
-          <button className="backBtn" onClick={handlePrev}>Previous</button>
-          <button className="nextBtn" onClick={handleNext}>Next</button>
+          <button className="backBtn" onClick={handlePrev}>
+            <img src={btnImg[0]} alt="Back Button Img"></img>
+          </button>
+          <button className="nextBtn" onClick={handleNext}>
+            <img src={btnImg[1]} alt="Back Button Img"></img>
+          </button>
         </div>
       </div>
     );
-  };
+};
+
