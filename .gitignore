@@ -368,6 +368,9 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
+# Google API
+firebase.js
+
 # OpenCover UI analysis results
 OpenCover/
 
