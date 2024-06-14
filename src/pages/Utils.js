@@ -1,6 +1,7 @@
 //React useState
 import React, { useEffect, useState, useRef } from 'react';
 
+
 //Excel Data
 import * as XLSX from 'xlsx';
 
@@ -70,6 +71,10 @@ import em_setting from '../assets/EM_setting.png';
 import em_stage1 from '../assets/EM_stage1.png';
 import em_stage2 from '../assets/EM_stage2.png';
 
+//Portfolio Website Screenshots
+import pf1 from '../assets/Pf1.png';
+import pf2 from '../assets/Pf2.png';
+import pf3 from '../assets/Pf3.png';
 
 
 
@@ -151,6 +156,12 @@ export const em_screenshots = [
     em_hint
 ]
 
+export const pf_screenshots = [
+    pf1,
+    pf2,
+    pf3
+]
+
 export const defaultTexts = {
     home: 'Home',
     projects: 'Projects',
@@ -223,6 +234,17 @@ export const useAnimateOnScroll = (titleRef) => {
             element.classList.remove('animate__animated', 'animate__fadeInLeft');
         }
     });
+};
+
+export const useScrollToSection = (refs) => {
+    const scrollToRef = (ref) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' });
+
+    return [
+        () => scrollToRef(refs[0]), 
+        () => scrollToRef(refs[1]), 
+        () => scrollToRef(refs[2]), 
+        () => scrollToRef(refs[3])  
+    ];
 };
 
 export const useAnimateWidthOnScroll = (divRef) => {
@@ -435,8 +457,16 @@ export const useLanguageManager = () => {
           console.error('Error fetching or parsing the Excel file:', error);
         });
     }, []);
+
+    const switchLanguage = (lang) => {
+        if (texts[lang]) {
+          setLanguage(lang);
+        } else {
+          console.warn(`Language ${lang} not supported`);
+        }
+      };
   
-    return { texts, language, setLanguage };
+    return { texts, language, setLanguage, switchLanguage };
 };
 
 export const SkillList = ({ skills }) => {
@@ -451,30 +481,7 @@ export const SkillList = ({ skills }) => {
     );
 };
 
-export const useImageFlipOnClick = () => {
-    const [flipped, setFlipped] = useState(false);
 
-    const handleFlip = () => {
-        setFlipped(!flipped);
-    };
-
-    return { flipped, handleFlip };
-};
-
-export const FlipImg = ({ image, index }) => {
-    const { flipped, handleFlip } = useImageFlipOnClick();
-
-    return (
-        <div key={index} onClick={handleFlip} className={`project_container ${flipped ? 'flipped' : ''}`}>
-            <img src={image} alt={`Project ${index + 1}`} />
-            <div className="project_click">Click!</div>
-            <div className={`project_details ${flipped ? 'visible' : ''}`}>
-                <div className="details_title">Creative Point</div>
-                <div className="details_info1">개발기간: 2020.05 - 2020.10</div>
-            </div>
-        </div>
-    );
-};
 
 export const ImageSlider = ({ images, screenSize }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -490,7 +497,7 @@ export const ImageSlider = ({ images, screenSize }) => {
     };
   
     return (
-      <div>
+      <div className="pj_imgdiv">
         <div className="pj_imgBg">
           <img className={screenSize} src={images[currentIndex]} alt="cp_img" />
         </div>

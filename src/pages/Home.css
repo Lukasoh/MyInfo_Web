@@ -46,6 +46,28 @@
     border-radius: 50px;
 }
 
+.langBtn
+{
+    position:absolute;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-size:20px;
+    left:10%;
+    top:25%;
+    width:7%;
+    height:50%;
+}
+
+.langBtn button
+{
+    background:none;
+    border:none;
+    color:white;
+    font-size:15px;
+    cursor: pointer;
+}
 
 /* Title Txt Div */
 
@@ -283,6 +305,8 @@
     margin-top:5%;
     border-radius:1%;
     position:relative;
+    display:flex;
+    flex-direction:row;
     background: linear-gradient(to bottom, rgb(46, 56, 71) 100%, rgba(34, 40, 49, 1) 100%);
 }
 
@@ -300,7 +324,7 @@
 
 .port_img
 {
-    width:60%;
+    width:55%;
     height:100%;
 }
 
@@ -313,7 +337,7 @@
 .full_img
 {
     width:100%;
-    height:100%;
+    height:75%;
 }
 
 .backBtn, .nextBtn
@@ -322,8 +346,8 @@
     background:none;
     border:none;
     top:88%;
-    width:70px;
-    height:70px;
+    width:50px;
+    height:50px;
     display:inline-block;
 }
 
@@ -385,7 +409,7 @@
     position:absolute;
     top:2%;
     margin-left:75%;
-    width:25%;
+    width:50%;
     font-size:23px;
 }
 
@@ -393,7 +417,7 @@
 {
     margin-top:3%;
     width:90%;
-    font-size:15px;
+    font-size:14px;
     
 }
 
@@ -401,6 +425,7 @@
 {
     height:10%;
     margin-top:1%;
+    font-size:15px;
     width:60%;
 }
 
@@ -447,7 +472,7 @@
 {
     height:100%;
     width:85%;
-    font-size:13px;
+    font-size:12px;
 }
 
 .project_func_tt
@@ -468,7 +493,7 @@
 
 .skill_items
 {
-    width:130px;
+    width:120px;
     height:50px;
     font-size:15px;
     display:flex;
@@ -512,7 +537,18 @@
 
 
 
-
+@media (max-width:1450px)
+{
+    .project_if
+    {
+        font-size:13px;
+    }
+    
+    .project_if, .project_func_items, .project_func_tt
+    {
+        font-size:11px;
+    }
+}
 @media (max-width:1300px)
 {
     .div4_1 > div
@@ -524,15 +560,58 @@
     {
         visibility:hidden;
     }
+
+    .bubble1
+    {
+        width:250px;
+        height:250px;
+        
+    }
+
+    .bubble2
+    {
+        width:450px;
+        height:450px;
+        
+    }
+
+    .bubble3
+    {
+        width:250px;
+        height:250px;
+        
+    }
+
+    .bubble4
+    {
+        width:250px;
+        height:250px;
+        
+    }
+
+    
 }
 
 @media (max-width:1100px)
 {
 
     
-
+    .project_if
+    {
+        font-size:12px;
+    }
     
+    .project_if, .project_func_items, .project_func_tt
+    {
+        font-size:11px;
+    }
     
+    .skill_items
+    {
+        width:70px;
+        height:35px;
+        font-size:9px;
+    }
 
     
 
@@ -550,12 +629,36 @@
     font-size: 25px;
     
     }
+
+    .project_pd
+    {
+        font-size:17px;
+    }
+
+    .github_link
+    {
+        font-size:12px;
+    }
 }
 
 @media (max-width:1000px)
 {
-    
 
+    .project_if
+    {
+        font-size:15px;
+    }
+    
+    .project_if, .project_func_items, .project_func_tt
+    {
+        font-size:13px;
+    }
+
+    
+    .github_link
+    {
+        font-size:10px;
+    }
     
 
 }
@@ -568,7 +671,7 @@
         display:absolute;
         flex-direction: column;
         background:black;
-        width:14%;
+        width:20%;
         height:150px;
         border-radius:0 0 10% 10%;
         border: 3px solid white;
@@ -586,7 +689,9 @@
 
     .btnClass button
     {
-        margin-left:30%;
+        font-size:10px;
+        margin-left:10%;
+        width:100%;
     }
 
     .myInfo
@@ -595,9 +700,29 @@
     }
 
     
+    .project_if
+    {
+        font-size:12px;
+    }
+    
+    .project_if, .project_func_items, .project_func_tt
+    {
+        font-size:11px;
+    }
 
+    .project_pd
+    {
+        font-size:15px;
+    }
+
+    .skill_items
+    {
+        width:80px;
+        height:40px;
+        font-size:10px;
+    }
    
-
+    
     
     
 
@@ -627,6 +752,35 @@
         width:50%;
         height:50%;
     }
+
+    .project_pd, .project_if, .project_func, .project_skills
+    {
+        visibility: hidden;
+    }
+
+    .project_tt
+    {
+        font-size:25px;
+    }
+
+    .github_btn
+    {
+        width:300px;
+        height:50px;
+        margin-top:40%;
+    }
+
+    .github_link
+    {
+        font-size:13px;
+    }
+
+    .nextBtn, .backBtn
+    {
+        visibility: hidden;
+    }
+
+    
 }
 
 @media (max-width: 600px)
@@ -649,7 +803,7 @@
 
     
 
-    .myInfo
+    .myInfo, .project_func, .project_func_tt
     {
         font-size:15px;       
     }
@@ -659,4 +813,228 @@
         top:45%;
     }
 
+    .my_intro
+    {
+        font-size:15px;
+    }
+
+    .bubble1
+    {
+        width:150px;
+        height:150px;
+        left:5%;
+    }
+
+    .bubble2
+    {
+        width:300px;
+        height:300px;
+        left:15%;
+    }
+
+    .bubble3
+    {
+        width:150px;
+        height:150px;
+        left:50%;
+        top:75%;
+    }
+
+    .bubble4
+    {
+        width:250px;
+        height:250px;
+        top:35%;
+        left:40%;
+    }
+
+    
+    .project_tt
+    {
+        font-size:20px;
+    }
+
+    .github_link
+    {
+        margin-top:10%;
+        font-size:11px;
+    }
+
+    .github_btn
+    {
+        width:50%;
+    }
 }
+
+@media only screen and (max-width:500px)
+{
+
+    .menuBtn
+    {
+        right: 20%;
+    }
+
+    .headerBg
+    {
+        height:300px;
+        transform:scale(2);
+    }
+
+    .titleTxt
+    {
+        font-size: 50px;
+    }
+
+    .subTitleTxt
+    {
+        font-size: 25px;
+    }
+
+    .my_intro
+    {
+        width:70%;
+    }
+
+    .aboutMeTxt
+    {
+        font-size:60px;
+    }
+
+    .projectSubTxt
+    {
+        font-size: 37px;
+        width:100%;
+    }
+
+
+    .project_container
+    {
+        height:300px;
+        
+    }
+
+    .pj_imgdiv
+    {    
+        width:60%;
+        
+    }
+
+    .pj_imgBg
+    {
+        left:5%;
+    }
+
+    .pj_info
+    {
+        left:60%;
+        width:40%;
+        
+    }
+
+    .nextBtn, .backBtn
+    {
+        visibility:visible;
+        width:10%;
+        height:10%;
+    }
+
+    .backBtn
+    {
+        left:15%;
+    }
+
+    .nextBtn
+    {
+        left:33%;
+    }
+
+    .project_mb
+    {
+        width:80%;
+        
+    }
+
+    .project_tt
+    {
+        font-size:20px;
+        width:80%;
+        margin-top:10%;
+        font-weight:bold;
+    }
+
+    .github_link
+    {
+        display:flex;
+        flex-direction:column;
+        width:80%;
+        height:60%;
+        margin-top:0;
+        
+    }
+
+    .pj_imgBg
+    {
+        width:50%;
+        left:3%;
+    }
+    .github_btn
+    {
+        width:70%;
+    }
+
+    .port_img
+    {
+        width:80%;
+    }
+
+    .bubble1
+    {
+        left:10%;
+    }
+    .bubble2
+    {
+        left:10%;
+    }
+    .bubble3
+    {
+        left:60%;
+        top:75%;
+    }
+    .bubble4
+    {
+        left:30%;
+    }
+
+    
+   
+} 
+
+
+
+@media screen and (-webkit-min-device-pixel-ratio: 0.25) {
+    .div1, .div2, .div3 {
+      transform: scale(0.4);
+    }
+    
+  }
+  
+  @media screen and (-webkit-min-device-pixel-ratio: 0.5) {
+    .div1, .div2, .div3  {
+      transform: scale(0.6);
+    }
+    
+  }
+  
+  @media screen and (-webkit-min-device-pixel-ratio: 0.75) {
+    .div1, .div2, .div3  {
+      transform: scale(0.8);
+    }
+    
+  }
+  
+  @media screen and (-webkit-min-device-pixel-ratio: 1) {
+    .div1, .div2, .div3  {
+      transform: scale(1);
+    }
+   
+  }

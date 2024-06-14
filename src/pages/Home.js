@@ -1,5 +1,5 @@
 import 'animate.css/animate.min.css';
-import React, { useRef} from 'react';
+import React, { useRef } from 'react';
 import { ReactTyped } from "react-typed";
 import { Link } from 'react-router-dom';
 import '../index.css';
@@ -9,12 +9,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import {
-  
   bgImg,
   images,
   styleImg,
   cp_screenshots,
   em_screenshots,
+  pf_screenshots,
   logoImg,
   ImageSlider,
   defaultTexts,
@@ -23,41 +23,40 @@ import {
   useTypeAnim,
   useNavBtnClick,
   useLanguageManager,
-  useAnimateWidthOnScroll
+  useAnimateWidthOnScroll,
+  
   
 } from './Utils';
+
 
 function Home() {
   const titleRef = useRef(null);
   const navRef = useRef(null);
   const imgRef = useRef(null);
   const aboutMeRef = useRef(null);
-
   const navBtnRef = useRef(null);
   const btnListRef = useRef(null);
 
   const div4Ref = useRef(null);
 
-  const handleScroll = (topVal) => {
-    window.scrollTo({
-      top: topVal, 
-      left: 0, 
-      behavior: 'smooth' 
-    });
+  const cpRef = useRef(null);
+  const emRef = useRef(null);
+  const pfRef = useRef(null);
+
+  const scrollToRef = (ref) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
- 
-
-  
   useAnimateOnScroll(titleRef);
   useSetNavBg(navRef, imgRef);
   useNavBtnClick(navBtnRef, btnListRef);
   useAnimateWidthOnScroll(div4Ref);
-  
 
   const startTyping = useTypeAnim(aboutMeRef);
 
-  const { texts, language } = useLanguageManager();
+  const { texts, language, switchLanguage } = useLanguageManager();
 
   const displayTexts = texts[language] || defaultTexts;
 
@@ -71,8 +70,18 @@ function Home() {
   ];
 
   const cp_skills = [
-    "Unity Engine", "C#", "Visual Studio", "Adobe Photoshop" 
-  ]
+    "Unity Engine", "C#", "Visual Studio", "Adobe Photoshop"
+  ];
+
+  const em_skills = [
+    "Unity Engine", "C#", "Visual Studio", "Adobe Photoshop", "Adobe XD"
+  ];
+
+  const pf_skills = [
+    "React", "Java Script", "Firebase", "NoSQL", "Adobe Photoshop"
+  ];
+
+  
 
   return (
     <div className="Main">
@@ -80,12 +89,16 @@ function Home() {
         <div className="logo">
           <img src={images[0]} alt="Logo Img" className="logoImg" />
         </div>
+        <div className="langBtn">
+          <button className="lang_en" onClick={() => switchLanguage('en')}>EN</button>
+          / 
+          <button className="lang_kr" onClick={() => switchLanguage('ko')}>KR</button>
+        </div>
         <div className="btnClass" ref={btnListRef}>
-          <button onClick={() => handleScroll(2000)} className="Btn1">{displayTexts.aboutMe}</button>
-          <button onClick={() => handleScroll(4870)} className="Btn2">Creative Point</button>
-          <button onClick={() => handleScroll(5545)} className="Btn3">Endless Mansion</button>
-          <button onClick={() => handleScroll(6220)} className="Btn4">{displayTexts.portf}</button>
-          
+          <button className="Btn1" onClick={() => scrollToRef(aboutMeRef)}>{displayTexts.aboutMe}</button>
+          <button className="Btn2" onClick={() => scrollToRef(cpRef)}>Creative Point</button>
+          <button className="Btn3" onClick={() => scrollToRef(emRef)}>Endless Mansion</button>
+          <button className="Btn4" onClick={() => scrollToRef(pfRef)}>{displayTexts.portf}</button>
         </div>
         <div className="menuBtn" ref={navBtnRef}></div>
       </div>
@@ -116,7 +129,7 @@ function Home() {
                   showCursor={true}
                 />
               ) : (
-                <span></span>
+                <span>{item}</span>
               )}
             </li>
           ))}
@@ -132,7 +145,7 @@ function Home() {
         </div>
         <div className="projectSubTxt">{displayTexts.pjIntro}</div>
         <div className="project_group">
-          <div className="project_container">
+          <div className="project_container pj1" ref={cpRef}>
             <ImageSlider images={cp_screenshots} screenSize="port_img"/>
             <div className="pj_info">
               <div className="project_mb">{displayTexts.solo}</div>
@@ -165,12 +178,13 @@ function Home() {
                   </div>
                 ))}
               </div>
+            </div>
           </div>
-          </div>
-          <div className="project_container">
+
+          <div className="project_container pj2" ref={emRef}>
             <ImageSlider images={em_screenshots} screenSize="land_img"/>
             <div className="pj_info">
-            <div className="project_mb">{displayTexts.solo}</div>
+              <div className="project_mb">{displayTexts.solo}</div>
               <div className="project_tt">Endless Mansion</div>
               <div className="github_link">
                 <a className="github_btn" href="https://github.com/Lukasoh/EndlessMansion" target="_blank" rel="noopener noreferrer">
@@ -193,7 +207,7 @@ function Home() {
                 </div>
               </div>
               <div className="project_skills">
-                {cp_skills.map((item, index) => (
+                {em_skills.map((item, index) => (
                   <div className="skill_items" key={index}>
                     {item}
                   </div>
@@ -201,8 +215,9 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="project_container">
-            <ImageSlider images={images} screenSize="full_img"/>
+
+          <div className="project_container pj3" ref={pfRef}>
+            <ImageSlider images={pf_screenshots} screenSize="full_img"/>
             <div className="pj_info">
               <div className="project_mb">{displayTexts.solo}</div>
               <div className="project_tt">{displayTexts.portf}</div>
@@ -211,21 +226,21 @@ function Home() {
                   <img className="githubLogo" src={logoImg[8]} alt="GitHub Logo"></img>
                   <div className="linkBtn_info">GitHub</div>
                 </a>
-                
               </div>
               <div className="project_pd">2024.05 ~ 2024.06</div>
-              <div className="project_if">11111111111111111111122222222222222223333333333333344444444444445555555555555</div>
+              <div className="project_if">{displayTexts.pfInfo}</div>
               
               <div className="project_func">
                 <div className="project_func_tt">{displayTexts.mainF}</div>
                 <div className="project_func_items">
-                  <p>한글 / 영어 언어 선택</p>
-                  <p>플레이어 데이터에 따른 다음 스테이지 활성화 / 비활성화</p>
-                  <p>광고 시청에 따른 힌트 보상 제공</p>
+                  <p>{displayTexts.pfLang}</p>
+                  <p>{displayTexts.pfSi}</p>
+                  <p>{displayTexts.pfIntro}</p>
+                  <p>{displayTexts.pfLink}</p>
                 </div>
               </div>
               <div className="project_skills">
-                {cp_skills.map((item, index) => (
+                {pf_skills.map((item, index) => (
                   <div className="skill_items" key={index}>
                     {item}
                   </div>

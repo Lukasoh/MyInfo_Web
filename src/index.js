@@ -6,6 +6,7 @@ import PrivacyPolicy from './pages/Privacy_Policy';
 import Projects from './pages/Projects';
 import CreativePoint from './pages/CreativePoint';
 import { ScrollToTop } from './pages/Utils';
+import { app, analytics } from './firebase';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
